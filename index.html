@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+        <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+        <div id="root"></div>
+    </body>
+    <script type="text/babel">
+        function App() {
+            const [minutes, setMinutes] = React.useState();
+            const onChangeMinutes = (event) => {
+                setMinutes(event.target.value);
+            }
+            const [hours, setHours] = React.useState();
+            const onChangeHours = (event) => {
+                setHours(event.target.value);
+            }
+            return (
+                <div>
+                    <h1>Super Converter</h1>
+                    <label htmlFor="minutes">Minutes</label>
+                    <input value={minutes} id="minutes" placeholder="Minutes" type="number" onChange={onChangeMinutes}/>
+                    <h4>You want to convert {minutes}</h4>
+                    <label htmlFor="hours">Hours</label>
+                    <input value={hours} id="hours" placeholder="Hours" type="number" onChange={onChangeHours}/>
+                    <h4>You wnat to convert {hours}</h4>
+                </div>
+            )
+        }
+        ReactDOM.render(<App />, root);
+    </script>
+</html>
